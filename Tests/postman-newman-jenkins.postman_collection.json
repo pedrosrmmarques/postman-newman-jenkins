@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "c7edff85-0d8c-4d07-aa30-48d753d6f9c9",
+		"name": "postman-newman-jenkins",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET JSONPLACEHOLDER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "73b025cb-74de-4e7d-89aa-50dbda812310",
+						"type": "text/javascript",
+						"exec": [
+							"let i = +environment.iteration;",
+							"let B = +environment.N;",
+							"",
+							"// Check status code",
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200); ",
+							"});",
+							"",
+							"",
+							"",
+							"if (i == B)",
+							"{",
+							"        postman.setNextRequest('null'); // breaks the loop",
+							"}",
+							"        ",
+							"else",
+							"{",
+							"        postman.setNextRequest('GET JSONPLACEHOLDER');",
+							"        i=i+1;",
+							"        postman.setEnvironmentVariable(\"iteration\", i);",
+							"        ",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

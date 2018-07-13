@@ -6,7 +6,7 @@
 	"test": "tests"
   },
   "scripts": {
-    "api-tests": "newman run tests/Test.postman_collection.json -e Test.postman_environment.json"
+    "api-tests": "newman run tests/postman-newman-jenkins.postman_collection.json -e postman-newman-jenkins.postman_environment.json"
   },
   "author": "Pedro Marques",
   "dependencies": {
