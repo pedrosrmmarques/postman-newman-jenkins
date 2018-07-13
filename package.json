@@ -6,7 +6,7 @@
 	"test": "tests"
   },
   "scripts": {
-    "api-tests": "newman run tests/postman-newman-jenkins.postman_collection.json -e tests/postman-newman-jenkins.postman_environment.json"
+    "api-tests": "newman run tests/postman-newman-jenkins.postman_collection.json -e tests/postman-newman-jenkins.postman_environment.json --disable-unicode"
   },
   "author": "Pedro Marques",
   "dependencies": {
